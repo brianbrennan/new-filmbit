@@ -7,6 +7,7 @@ angular.module('mainCtrl', [])
 		vm.loggedIn = Auth.isLoggedIn();
 
 		$rootScope.$on('$routeChangeStart', function(){
+
 			vm.loggedIn = Auth.isLoggedIn();
 
 			Auth.getUser()
@@ -27,7 +28,6 @@ angular.module('mainCtrl', [])
 			Auth.logout();
 
 			vm.user = {};
-
-			$location.path('/login')
+			$location.path('/login');
 		};
 	});
